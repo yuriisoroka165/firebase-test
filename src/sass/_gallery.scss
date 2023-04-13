@@ -1,0 +1,163 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+:root {
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-duration: 250ms;
+}
+
+.header {
+    position: relative;
+    height: 80px;
+    margin-bottom: 40px;
+}
+
+.header-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0669BC;
+    z-index: 10;
+}
+
+.search-form {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-input {
+    width: 300px;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 60px;
+    border: none;
+    border-radius: 10px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    background-color: #E5E5E5;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+}
+
+.search-button-icon {
+    width: 30px;
+    height: 30px; 
+}
+
+a {
+    text-decoration: none;
+}
+
+.gallery {
+    display: grid;
+    max-width: 1500px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-auto-rows: 240px;
+    grid-row-gap: 80px;
+    grid-column-gap: 30px;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+
+.photo-card {
+    position: relative;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+.gallery__image:hover {
+    transform: scale(1.03);
+}
+
+.gallery__image {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform var(--animation-duration) var(--timing-function);
+}
+
+.info {
+    display: flex;
+    gap: 5px;
+    justify-content: space-around;
+    border-radius:5px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+                0px 1px 1px 0px rgba(0, 0, 0, 0.14), 
+                0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    
+    
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    margin: 10px;
+}
+
+.info-item b {
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.load-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.load-more {
+    width: 150px;
+    height: 40px;
+    background-color: #0669BC;
+    border: 0;
+    border-radius: 10px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    cursor: pointer;
+}
+
+.load-more.is-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
