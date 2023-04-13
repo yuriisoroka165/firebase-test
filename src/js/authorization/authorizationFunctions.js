@@ -99,7 +99,7 @@ export function logOff() {
 export function writeUserDataToDatabase(data) {
     const userId = auth.currentUser.uid;
     update(ref(database, "users/" + userId), {
-        queue: [...data],
+        queue: data,
     });
 }
 
