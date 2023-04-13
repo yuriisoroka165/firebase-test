@@ -96,12 +96,18 @@ export function logOff() {
         });
 }
 
-export function writeUserDataToDatabase(data, type) {
+export function writeUserDataToDatabase(data) {
     const userId = auth.currentUser.uid;
     update(ref(database, "users/" + userId), {
-        queue: data,
+        queue: [...data],
     });
 }
+
+// # Запис кожного об'єкту масиву окремо
+// ref = db.reference('/path/to/array')
+// array = [{'name': 'John', 'age': 25}, {'name': 'Jane', 'age': 30}]
+// for item in array:
+//     ref.push().set(item)
 
 // export function writeUserDataToDatabase(data) {
 //     const userId = auth.currentUser.uid;

@@ -7,7 +7,12 @@ import {
     writeUserDataToDatabase,
 } from "./authorization/authorizationFunctions";
 
-const rawData = [{ id: nanoid(), name: "Yurii Soroka", number: "111-11-11" }];
+const rawData = [
+    { id: nanoid(), name: "Yu Soroka", number: "111-11-11" },
+    { id: nanoid(), name: "Yurii Soroka", number: "111-11-11" },
+    { id: nanoid(), name: "Yur Soroa", number: "111-11-11" },
+    { id: nanoid(), name: "Yrii Soka", number: "111-11-11" },
+];
 
 const refs = {
     loginBtn: document.querySelector(".login-button"),
