@@ -176,10 +176,8 @@ function readUserDataFromDatabase() {
     get(child(dbRef, `users/${userId}/queue`))
         .then(snapshot => {
             if (snapshot.exists()) {
-                const results = snapshot.val();
+                const results = Object.values(snapshot.val());
                 console.log(results);
-                // console.log(typeof(snapshot.val()));
-                // console.log(Array.from(snapshot.val().values()));
             } else {
                 console.log("No data available");
             }
@@ -191,17 +189,3 @@ function readUserDataFromDatabase() {
         });
 }
 
-// # Запис кожного об'єкту масиву окремо
-// ref = db.reference('/path/to/array')
-// array = [{'name': 'John', 'age': 25}, {'name': 'Jane', 'age': 30}]
-// for item in array:
-//     ref.push().set(item)
-
-// export function writeUserDataToDatabase(data) {
-//     const userId = auth.currentUser.uid;
-//     const postListRef = ref(database, "users/" + userId);
-//     const newPostRef = push(postListRef);
-//     set(newPostRef, {
-//         queue: data
-//     })
-// }
